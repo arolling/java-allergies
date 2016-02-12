@@ -22,10 +22,27 @@ public class AllergiesTest extends FluentTest {
 // Unit testing
 
   @Test
-  public void findAllergies_whenAllergyScoreIsOneReturn_Eggs() {
+  public void findAllergies_whenAllergyScoreIs128Return_cats() {
     ArrayList<String> allergies = new ArrayList<String>();
     allergies.add("cats");
     assertEquals(allergies, Allergies.findAllergies(128));
+  }
+
+  @Test
+  public void findAllergies_whenAllergyScoreIsOneReturn_Eggs() {
+    ArrayList<String> allergies = new ArrayList<String>();
+    allergies.add("eggs");
+    assertEquals(allergies, Allergies.findAllergies(1));
+  }
+
+  @Test
+  public void findAllergies_whenAllergyScoreIs165Return_SeveralItems() {
+    ArrayList<String> allergies = new ArrayList<String>();
+    allergies.add("cats");
+    allergies.add("chocolate");
+    allergies.add("shellfish");
+    allergies.add("eggs");
+    assertEquals(allergies, Allergies.findAllergies(165));
   }
 
 //Integration testing
